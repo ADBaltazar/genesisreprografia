@@ -1,0 +1,1892 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Genesis Reprografia — Gráfica no Uíge | Impressão, encadernação e papelaria</title>
+<meta name="description" content="Genesis Reprografia (Pixel Print, Lda.) — gráfica em Uíge desde 2024. Impressão, reprografia, encadernação, papelaria personalizada e publicações." />
+<meta name="theme-color" content="#FF6900" />
+<link rel="canonical" href="https://pixelprint.ao/" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23FF6900'/%3E%3Ctext x='50%25' y='55%25' font-family='Arial' font-size='38' font-weight='800' fill='%23fff' text-anchor='middle' dominant-baseline='middle'%3EG%3C/text%3E%3C/svg%3E" />
+
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_AO" />
+<meta property="og:site_name" content="Genesis Reprografia" />
+<meta property="og:title" content="Genesis Reprografia — Impressão de excelência no Uíge" />
+<meta property="og:description" content="Impressão, encadernação, papelaria personalizada e publicações em Uíge." />
+<meta property="og:image" content="assets/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Genesis Reprografia — encadernação espiral produzida em Uíge" />
+<meta property="og:url" content="https://pixelprint.ao/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="assets/og-image.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        brand: { DEFAULT: '#FF6900', 600: '#E55B00', 700: '#B84800' },
+        ink:   { DEFAULT: '#172033', 50: '#F7F5F1', 100: '#EDE8E0', 200: '#D9D2C6', 300: '#B8B2A6', 400: '#6B6F76', 900: '#0B1424' },
+        wa:    { DEFAULT: '#25D366', 600: '#1EBE5A' }
+      },
+      fontFamily: {
+        display: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace']
+      },
+      maxWidth: { content: '1200px' }
+    }
+  }
+};
+</script>
+
+<style>
+  html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+  body { -webkit-font-smoothing: antialiased; font-feature-settings: "ss01", "cv11"; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+  }
+
+  .paper {
+    background-color: #F7F5F1;
+    background-image: radial-gradient(rgba(23,32,51,.022) 1px, transparent 1px);
+    background-size: 6px 6px;
+  }
+
+  .crop { position: relative; }
+  .crop::before, .crop::after {
+    content: ''; position: absolute; width: 18px; height: 18px;
+    border-color: currentColor; border-style: solid; border-width: 0;
+    opacity: .4; pointer-events: none; z-index: 5;
+  }
+  .crop::before { top: 6px; left: 6px; border-top-width: 1px; border-left-width: 1px; }
+  .crop::after  { bottom: 6px; right: 6px; border-bottom-width: 1px; border-right-width: 1px; }
+
+  .img-slot { position: relative; overflow: hidden; background: #EDE8E0; }
+  .img-slot > img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover; display: block; z-index: 2;
+  }
+  .img-slot .typo {
+    position: absolute; inset: 0; padding: 1.5rem;
+    display: flex; flex-direction: column; justify-content: space-between;
+    color: #172033; z-index: 1;
+  }
+  .img-slot.is-missing > img { display: none; }
+  .img-slot.is-missing {
+    background-image: repeating-linear-gradient(45deg, rgba(23,32,51,.02) 0 1px, transparent 1px 14px);
+  }
+
+  .portfolio-img {
+    position: relative;
+    overflow: hidden;
+    background: #EDE8E0;
+  }
+  .portfolio-img > img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    z-index: 2;
+    transition: transform .9s cubic-bezier(.2,.8,.2,1);
+  }
+  .portfolio-item:hover .portfolio-img > img { transform: scale(1.04); }
+  .portfolio-img .typo {
+    position: absolute; inset: 0; padding: 1.5rem;
+    display: flex; flex-direction: column; justify-content: space-between;
+    color: #172033; z-index: 1;
+  }
+  .portfolio-img.is-missing > img { display: none; }
+  .portfolio-img.is-missing {
+    background-image: repeating-linear-gradient(45deg, rgba(23,32,51,.02) 0 1px, transparent 1px 14px);
+  }
+
+  .portfolio-caption {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: 2.5rem 1.25rem .9rem;
+    background: linear-gradient(to top, rgba(23,32,51,.92) 0%, rgba(23,32,51,.65) 55%, rgba(23,32,51,0) 100%);
+    color: #fff;
+    z-index: 3;
+    pointer-events: none;
+  }
+  .portfolio-caption h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: .875rem;
+    line-height: 1.2;
+    letter-spacing: -.005em;
+  }
+  .portfolio-caption p {
+    margin-top: .2rem;
+    font-size: .7rem;
+    line-height: 1.35;
+    color: rgba(255,255,255,.75);
+  }
+  @media (min-width: 768px) {
+    .portfolio-caption { padding: 3rem 1.5rem 1.1rem; }
+    .portfolio-caption h3 { font-size: 1rem; }
+    .portfolio-caption p { font-size: .75rem; }
+  }
+
+  #site-header {
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    transition: background-color .3s ease, backdrop-filter .3s ease,
+                border-color .3s ease, box-shadow .3s ease;
+  }
+  #site-header.is-scrolled,
+  #site-header.menu-open {
+    background: rgba(255, 255, 255, 0.92);
+    border-bottom-color: #EDE8E0;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 1px 3px rgba(23, 32, 51, 0.04);
+  }
+
+  .skip-link { position: absolute; left: -999px; top: 0; background: #172033; color: #fff; padding: .75rem 1rem; z-index: 9999; }
+  .skip-link:focus { left: 0; }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible {
+    outline: 2px solid #FF6900; outline-offset: 3px; border-radius: 4px;
+  }
+  a[aria-disabled="true"] { cursor: default; }
+
+  .reveal { opacity: 1; transform: none; }
+  .js-reveal .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s, transform .6s; }
+  .js-reveal .reveal.in { opacity: 1; transform: none; }
+
+  .carousel-track { display: grid; }
+  .carousel-slide {
+    grid-area: 1 / 1;
+    opacity: 0;
+    transition: opacity .6s ease;
+    pointer-events: none;
+  }
+  .carousel-slide.active { opacity: 1; pointer-events: auto; }
+
+  .carousel-dot {
+    width: 32px; height: 3px; border-radius: 2px;
+    background: rgba(23,32,51,.2);
+    transition: background .2s;
+    border: 0; cursor: pointer; padding: 0;
+  }
+  .carousel-dot[aria-current="true"] { background: #FF6900; }
+  .carousel-dot:hover { background: rgba(23,32,51,.4); }
+
+  .carousel-arrow {
+    width: 42px; height: 42px; border-radius: 50%;
+    border: 1px solid #D9D2C6; background: white; color: #172033;
+    display: inline-flex; align-items: center; justify-content: center;
+    transition: all .2s ease; cursor: pointer;
+  }
+  .carousel-arrow:hover { border-color: #172033; background: #F7F5F1; }
+
+  .filter-btn {
+    padding: .45rem 1rem; border-radius: 999px;
+    font-size: .8rem; font-weight: 600;
+    color: #6B6F76; background: transparent;
+    border: 1px solid #D9D2C6;
+    transition: all .2s; cursor: pointer;
+  }
+  .filter-btn:hover { color: #172033; border-color: #172033; }
+  .filter-btn[aria-pressed="true"] { color: #fff; background: #172033; border-color: #172033; }
+  .portfolio-item[hidden] { display: none !important; }
+
+  .marquee {
+    position: relative; overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+            mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  }
+  .marquee-track {
+    display: flex; gap: 1.5rem;
+    width: max-content;
+    animation: marqueeScroll var(--marquee-duration, 45s) linear infinite;
+  }
+  .marquee:hover .marquee-track,
+  .marquee:focus-within .marquee-track { animation-play-state: paused; }
+  @keyframes marqueeScroll {
+    from { transform: translate3d(0, 0, 0); }
+    to   { transform: translate3d(-50%, 0, 0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track { animation: none; }
+    .marquee { overflow-x: auto; }
+  }
+
+  .partner-logo {
+    height: 44px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: .5rem;
+  }
+  .partner-logo img {
+    max-height: 44px; max-width: 100%;
+    width: auto; height: auto;
+    object-fit: contain; display: block;
+  }
+  .partner-logo .partner-fallback {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800; font-size: 1rem; line-height: 1;
+    color: #172033; letter-spacing: -.01em;
+  }
+  .partner-logo:not(.is-missing) .partner-fallback { display: none; }
+  .partner-logo.is-missing img { display: none; }
+
+  .org-tree { max-width: 960px; margin: 0 auto; }
+
+  .org-node {
+    display: block; padding: 0;
+    border: 1px solid #D9D2C6;
+    border-radius: .75rem;
+    background: #fff;
+    overflow: hidden;
+    text-align: left;
+    position: relative;
+    transition: transform .4s cubic-bezier(.2,.8,.2,1),
+                box-shadow .4s cubic-bezier(.2,.8,.2,1),
+                border-color .3s ease;
+    will-change: transform;
+  }
+  .org-node::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #FF6900 0%, #FF8A3D 100%);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform .5s cubic-bezier(.2,.8,.2,1);
+    z-index: 4;
+    pointer-events: none;
+  }
+  .org-node:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 48px -16px rgba(23,32,51,.22),
+                0 8px 16px -8px rgba(23,32,51,.08);
+    border-color: #B8B2A6;
+  }
+  .org-node:hover::before { transform: scaleX(1); }
+
+  .org-node.org-primary { background: #172033; border-color: #172033; }
+  .org-node.org-primary:hover {
+    border-color: #FF6900;
+    box-shadow: 0 24px 48px -16px rgba(23,32,51,.4),
+                0 0 40px -12px rgba(255,105,0,.35);
+  }
+
+  .org-photo {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    min-height: 260px;
+    overflow: hidden;
+    background: #EDE8E0;
+  }
+  .org-photo img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center;
+    display: block; z-index: 1;
+    transition: transform 1s cubic-bezier(.2,.8,.2,1);
+    will-change: transform;
+  }
+  .org-node:hover .org-photo img { transform: scale(1.06); }
+
+  .org-photo .org-photo-fallback {
+    position: absolute;
+    top: 1rem; left: 1rem;
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 2.5rem; height: 2.5rem; padding: 0 .55rem;
+    border-radius: .375rem;
+    background: rgba(23,32,51,.08);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800; font-size: .85rem;
+    color: #6B6F76; letter-spacing: .04em;
+    z-index: 1;
+  }
+  .org-photo:not(.is-missing) .org-photo-fallback { display: none; }
+  .org-photo.is-missing img { display: none; }
+  .org-node.org-primary .org-photo { background: rgba(255,255,255,.08); }
+  .org-node.org-primary .org-photo .org-photo-fallback {
+    background: rgba(255,255,255,.1);
+    color: rgba(255,255,255,.85);
+  }
+
+  .org-photo-overlay {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: 3.5rem 1rem 1rem;
+    background: linear-gradient(
+      to top,
+      rgba(23,32,51,.97) 0%,
+      rgba(23,32,51,.72) 50%,
+      rgba(23,32,51,0)   100%
+    );
+    color: #fff; z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: .65rem;
+    transition: background .4s ease;
+    pointer-events: none;
+  }
+  .org-node:hover .org-photo-overlay {
+    background: linear-gradient(
+      to top,
+      rgba(23,32,51,.98) 0%,
+      rgba(23,32,51,.85) 50%,
+      rgba(23,32,51,0)   100%
+    );
+  }
+  .org-photo-overlay a { pointer-events: auto; }
+
+  .org-photo-info {
+    text-align: left;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .org-photo-name {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700; font-size: .78rem;
+    line-height: 1.2; letter-spacing: -.005em;
+    color: #fff;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .org-photo-role {
+    font-size: .68rem;
+    color: rgba(255,255,255,.88);
+    margin-top: .2rem;
+    line-height: 1.2;
+  }
+  .org-photo-area {
+    font-size: .55rem;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: #FF8A3D;
+    margin-top: .3rem;
+    font-weight: 600;
+  }
+
+  .org-photo-social {
+    display: flex; flex-direction: column; gap: .3rem;
+    flex-shrink: 0; align-items: center;
+  }
+  .org-photo-social a {
+    width: 22px; height: 22px;
+    display: inline-flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+    background: rgba(255,255,255,.14);
+    color: #fff;
+    opacity: .7;
+    transform: translateX(6px);
+    transition: background .25s ease,
+                transform .35s cubic-bezier(.2,.8,.2,1),
+                opacity .25s ease,
+                box-shadow .25s ease;
+  }
+  .org-node:hover .org-photo-social a { opacity: 1; transform: translateX(0); }
+  .org-node:hover .org-photo-social a:nth-child(1) { transition-delay: .05s; }
+  .org-node:hover .org-photo-social a:nth-child(2) { transition-delay: .12s; }
+  .org-node:hover .org-photo-social a:nth-child(3) { transition-delay: .19s; }
+  .org-photo-social a:hover {
+    background: #FF6900;
+    box-shadow: 0 0 0 4px rgba(255,105,0,.18);
+    transform: translateX(0) scale(1.15) !important;
+  }
+  .org-photo-social a svg { width: 11px; height: 11px; }
+
+  @media (min-width: 768px) {
+    .org-photo-overlay { padding: 4rem 1.1rem 1.1rem; }
+    .org-photo-name { font-size: .88rem; }
+    .org-photo-role { font-size: .74rem; }
+    .org-photo-area { font-size: .6rem; }
+    .org-photo-social a { width: 24px; height: 24px; }
+    .org-photo-social a svg { width: 12px; height: 12px; }
+  }
+
+  @media (max-width: 767px) {
+    .org-photo { min-height: 320px; }
+  }
+
+  @keyframes orgNodeIn {
+    from { opacity: 0; transform: translateY(20px) scale(.98); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .js-reveal .reveal.in .org-tree .org-node {
+    animation: orgNodeIn .7s cubic-bezier(.21,1.02,.73,1) both;
+  }
+  .js-reveal .reveal.in .org-tree > div:first-child .org-node { animation-delay: .05s; }
+  .js-reveal .reveal.in .org-branches-3:not(.org-branches-flat) .org-branch-3:nth-child(1) .org-node { animation-delay: .2s; }
+  .js-reveal .reveal.in .org-branches-3:not(.org-branches-flat) .org-branch-3:nth-child(2) .org-node { animation-delay: .3s; }
+  .js-reveal .reveal.in .org-branches-3:not(.org-branches-flat) .org-branch-3:nth-child(3) .org-node { animation-delay: .4s; }
+  .js-reveal .reveal.in .org-branches-3.org-branches-flat .org-branch-3:nth-child(1) .org-node { animation-delay: .55s; }
+  .js-reveal .reveal.in .org-branches-3.org-branches-flat .org-branch-3:nth-child(2) .org-node { animation-delay: .65s; }
+  .js-reveal .reveal.in .org-branches-3.org-branches-flat .org-branch-3:nth-child(3) .org-node { animation-delay: .75s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .org-node, .org-node::before, .org-photo img, .org-photo-social a,
+    .org-photo-overlay { transition: none; }
+    .js-reveal .reveal.in .org-tree .org-node { animation: none; opacity: 1; transform: none; }
+  }
+
+  .org-v { width: 1px; height: 1.5rem; background: #D9D2C6; margin: 0 auto; }
+
+  .org-branches-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+    padding-top: 1.5rem;
+  }
+  .org-branches-3::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 16.666%; right: 16.666%;
+    height: 1px;
+    background: #D9D2C6;
+  }
+  .org-branch-3 {
+    position: relative;
+    padding: 0 .75rem;
+    display: flex; flex-direction: column;
+  }
+  .org-branch-3::before {
+    content: '';
+    position: absolute;
+    top: -1.5rem; left: 50%;
+    width: 1px; height: 1.5rem;
+    background: #D9D2C6;
+    transform: translateX(-50%);
+  }
+
+  .org-branches-3.org-branches-flat { padding-top: 0; }
+  .org-branches-3.org-branches-flat::before { display: none; }
+  .org-branches-3.org-branches-flat .org-branch-3::before { display: none; }
+
+  .org-connectors-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0;
+  }
+  .org-connectors-3 > .org-v { margin: 0 auto; height: 1.5rem; }
+
+  @media (max-width: 767px) {
+    .org-branches-3 { grid-template-columns: 1fr; gap: 1rem; padding-top: 0; }
+    .org-branches-3::before { display: none; }
+    .org-branch-3 { padding: 0; }
+    .org-branch-3::before { display: none; }
+
+    .org-connectors-3 { display: block; padding: 0; }
+    .org-connectors-3 > .org-v { display: none; }
+    .org-connectors-3::before {
+      content: ''; display: block;
+      width: 1px; height: 1.5rem;
+      background: #D9D2C6;
+      margin: 0 auto;
+    }
+
+    .org-branches-3.org-branches-flat .org-branch-3 {
+      padding-left: 1.25rem;
+      position: relative;
+    }
+    .org-branches-3.org-branches-flat .org-branch-3::after {
+      content: '';
+      position: absolute;
+      top: 1.25rem; left: 0;
+      width: 1rem; height: 1px;
+      background: #FF6900;
+    }
+  }
+
+  .wa-float {
+    position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 45;
+    width: 56px; height: 56px; border-radius: 50%;
+    background: #25D366; color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 12px 30px -8px rgba(37, 211, 102, .55), 0 4px 12px rgba(23, 32, 51, .12);
+    transition: transform .2s ease;
+  }
+  .wa-float:hover { transform: scale(1.08); }
+  .wa-float::after {
+    content: ''; position: absolute; inset: 0; border-radius: 50%;
+    border: 2px solid #25D366; opacity: 0;
+    animation: waPulse 3s ease-out infinite;
+  }
+  @keyframes waPulse {
+    0%   { transform: scale(1);   opacity: .55; }
+    70%  { transform: scale(1.5); opacity: 0; }
+    100% { transform: scale(1.5); opacity: 0; }
+  }
+</style>
+<script>
+  try {
+    if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js-reveal');
+    }
+  } catch (e) {}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Genesis Reprografia e Gráfica",
+  "legalName": "Pixel Print, Lda.",
+  "description": "Gráfica em Uíge: impressão, encadernação, papelaria personalizada e publicações.",
+  "telephone": "+244928114472",
+  "image": "https://pixelprint.ao/assets/og-image.jpg",
+  "address": { "@type": "PostalAddress", "streetAddress": "Rua do Comércio, Centro, rés-do-chão, Loja n.º 17A", "addressLocality": "Uíge", "addressCountry": "AO" },
+  "foundingDate": "2024",
+  "areaServed": "Uíge, Angola",
+  "sameAs": ["https://www.facebook.com/search/top?q=Genesis%20Reprografia%20e%20Gr%C3%A1fica"]
+}
+</script>
+</head>
+
+<body class="paper text-ink font-sans antialiased">
+
+<a href="#main" class="skip-link">Saltar para o conteúdo</a>
+
+<header id="site-header" class="fixed top-0 inset-x-0 z-50">
+  <div class="max-w-content mx-auto px-5 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <a href="#inicio" class="flex items-center gap-2.5" aria-label="Genesis Reprografia — Início">
+        <span class="inline-flex items-center justify-center w-9 h-9 rounded-md bg-brand text-white font-display font-extrabold text-lg">G</span>
+        <span class="leading-tight">
+          <span class="block font-display font-extrabold tracking-tight text-base text-ink"><span class="text-brand">GENESIS</span> REPROGRAFIA</span>
+          <span class="block text-[10px] uppercase tracking-[.24em] text-ink-400 font-medium">Gráfica · Uíge</span>
+        </span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-1" aria-label="Navegação principal">
+        <a href="#servicos"   class="px-3 py-2 text-sm font-medium text-ink/70 hover:text-brand transition-colors">Serviços</a>
+        <a href="#trabalhos"  class="px-3 py-2 text-sm font-medium text-ink/70 hover:text-brand transition-colors">Trabalhos</a>
+        <a href="#orcamento"  class="px-3 py-2 text-sm font-medium text-ink/70 hover:text-brand transition-colors">Orçamento</a>
+        <a href="#equipa"     class="px-3 py-2 text-sm font-medium text-ink/70 hover:text-brand transition-colors">Equipa</a>
+        <a href="#contactos"  class="px-3 py-2 text-sm font-medium text-ink/70 hover:text-brand transition-colors">Contactos</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="#orcamento" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-ink text-white text-sm font-semibold hover:bg-brand transition-colors">Pedir orçamento</a>
+        <button id="menu-toggle" class="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-ink-200 bg-white" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-ink-100 shadow-lg">
+    <nav class="max-w-content mx-auto px-5 py-4 flex flex-col" aria-label="Menu móvel">
+      <a href="#servicos"  class="py-3 border-b border-ink-100 font-medium">Serviços</a>
+      <a href="#trabalhos" class="py-3 border-b border-ink-100 font-medium">Trabalhos</a>
+      <a href="#orcamento" class="py-3 border-b border-ink-100 font-medium">Orçamento</a>
+      <a href="#equipa"    class="py-3 border-b border-ink-100 font-medium">Equipa</a>
+      <a href="#contactos" class="py-3 border-b border-ink-100 font-medium">Contactos</a>
+      <a href="#orcamento" class="mt-3 inline-flex items-center justify-center px-5 py-3 rounded-full bg-ink text-white font-semibold">Pedir orçamento</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section id="inicio" class="pt-32 lg:pt-40 pb-16 lg:pb-24">
+  <div class="max-w-content mx-auto px-5 lg:px-8">
+    <div id="hero-carousel" class="relative" role="region" aria-roledescription="carrossel" aria-label="Destaques Genesis Reprografia">
+      <div class="carousel-track">
+
+        <article class="carousel-slide active" data-slide="0" role="group" aria-roledescription="slide" aria-label="Slide 1 de 3 — Impressão e reprografia">
+          <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <div class="lg:col-span-7">
+              <p class="font-mono text-[11px] tracking-[.28em] uppercase text-ink-400">N.º 01 — Gráfica · Uíge · Desde 2024</p>
+              <h1 class="mt-6 font-display font-extrabold text-4xl sm:text-5xl lg:text-[4.2rem] leading-[0.98] tracking-tight text-ink">
+                As suas ideias,<br/>impressas com<br/><span class="text-brand">excelência</span>.
+              </h1>
+              <p class="mt-7 max-w-xl text-base sm:text-lg text-ink-400 leading-relaxed">
+                Da reprografia à impressão digital, do documento simples à edição completa — com rigor em cada etapa.
+              </p>
+              <div class="mt-9">
+                <a href="#servicos" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-brand text-white font-semibold hover:bg-brand-600 transition-colors">
+                  Conhecer serviços
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="lg:col-span-5">
+              <figure class="max-w-md mx-auto">
+                <div class="crop aspect-[4/5]">
+                  <div class="img-slot w-full h-full" id="hero-slot-0">
+                    <img src="./IMG-20261107-WA0003.jpg" alt="Pilha de manuais com encadernação espiral produzidos pela Genesis Reprografia"
+                         width="1200" height="1500" loading="eager" fetchpriority="high" decoding="async"
+                         onerror="document.getElementById('hero-slot-0').classList.add('is-missing')" />
+                    <div class="typo">
+                      <span class="font-mono text-[10px] tracking-[.25em] uppercase text-ink/40">N.º 01 — Arquivo</span>
+                      <div>
+                        <div class="font-display font-extrabold text-3xl leading-tight text-ink">Encadernação<br/>em espiral</div>
+                        <div class="mt-3 font-mono text-[10px] tracking-[.2em] uppercase text-ink/40">Genesis Reprografia · Uíge</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <figcaption class="mt-3 flex items-center justify-between font-mono text-[10px] tracking-[.2em] uppercase text-ink-400">
+                  <span>Encadernação espiral</span>
+                  <span>Arquivo Genesis</span>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </article>
+
+        <article class="carousel-slide" data-slide="1" role="group" aria-roledescription="slide" aria-label="Slide 2 de 3 — Livros e encadernação">
+          <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <div class="lg:col-span-7">
+              <p class="font-mono text-[11px] tracking-[.28em] uppercase text-ink-400">N.º 02 — Livros e publicações</p>
+              <h2 class="mt-6 font-display font-extrabold text-4xl sm:text-5xl lg:text-[4.2rem] leading-[0.98] tracking-tight text-ink">
+                Damos forma<br/>às suas ideias,<br/><span class="text-brand">página por página</span>.
+              </h2>
+              <p class="mt-7 max-w-xl text-base sm:text-lg text-ink-400 leading-relaxed">
+                Livros literários, técnicos e académicos; propostas, manuais e publicações com acabamentos profissionais.
+              </p>
+              <div class="mt-9">
+                <a href="#orcamento" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-brand text-white font-semibold hover:bg-brand-600 transition-colors">
+                  Solicitar orçamento
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="lg:col-span-5">
+              <figure class="max-w-md mx-auto">
+                <div class="crop aspect-[4/5]">
+                  <div class="img-slot w-full h-full" id="hero-slot-1">
+                    <img src="./IMG-20261107-WA0007.jpg" alt="Proposta de projecto com encadernação espiral e capa técnica"
+                         width="960" height="1200" loading="lazy" decoding="async"
+                         onerror="document.getElementById('hero-slot-1').classList.add('is-missing')" />
+                    <div class="typo">
+                      <span class="font-mono text-[10px] tracking-[.25em] uppercase text-ink/40">N.º 02 — Arquivo</span>
+                      <div>
+                        <div class="font-display font-extrabold text-3xl leading-tight text-ink">Proposta de<br/>projecto</div>
+                        <div class="mt-3 font-mono text-[10px] tracking-[.2em] uppercase text-ink/40">Genesis Reprografia · Uíge</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <figcaption class="mt-3 flex items-center justify-between font-mono text-[10px] tracking-[.2em] uppercase text-ink-400">
+                  <span>Edição e encadernação</span>
+                  <span>Arquivo Genesis</span>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </article>
+
+        <article class="carousel-slide" data-slide="2" role="group" aria-roledescription="slide" aria-label="Slide 3 de 3 — Soluções gráficas">
+          <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <div class="lg:col-span-7">
+              <p class="font-mono text-[11px] tracking-[.28em] uppercase text-ink-400">N.º 03 — Soluções institucionais</p>
+              <h2 class="mt-6 font-display font-extrabold text-4xl sm:text-5xl lg:text-[4.2rem] leading-[0.98] tracking-tight text-ink">
+                A identidade<br/>da sua empresa<br/><span class="text-brand">também se imprime</span>.
+              </h2>
+              <p class="mt-7 max-w-xl text-base sm:text-lg text-ink-400 leading-relaxed">
+                Facturas certificadas pela AGT, papel timbrado, relatórios institucionais e materiais personalizados.
+              </p>
+              <div class="mt-9">
+                <a href="#contactos" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-brand text-white font-semibold hover:bg-brand-600 transition-colors">
+                  Falar com a equipa
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="lg:col-span-5">
+              <figure class="max-w-md mx-auto">
+                <div class="crop aspect-[4/5]">
+                  <div class="img-slot w-full h-full" id="hero-slot-2">
+                    <img src="./IMG-20261107-WA0005.jpg" alt="Publicação institucional com capa encadernada — trabalho Genesis Reprografia"
+                         width="1680" height="720" loading="lazy" decoding="async"
+                         onerror="document.getElementById('hero-slot-2').classList.add('is-missing')" />
+                    <div class="typo">
+                      <span class="font-mono text-[10px] tracking-[.25em] uppercase text-ink/40">N.º 03 — Arquivo</span>
+                      <div>
+                        <div class="font-display font-extrabold text-3xl leading-tight text-ink">Publicação<br/>institucional</div>
+                        <div class="mt-3 font-mono text-[10px] tracking-[.2em] uppercase text-ink/40">Genesis Reprografia · Uíge</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <figcaption class="mt-3 flex items-center justify-between font-mono text-[10px] tracking-[.2em] uppercase text-ink-400">
+                  <span>Edição de prestígio</span>
+                  <span>Arquivo Genesis</span>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="mt-10 flex items-center justify-between gap-4">
+        <div class="flex items-center gap-2" role="group" aria-label="Seleccionar slide">
+          <button type="button" class="carousel-dot" data-slide-to="0" aria-label="Ir para slide 1" aria-current="true"></button>
+          <button type="button" class="carousel-dot" data-slide-to="1" aria-label="Ir para slide 2" aria-current="false"></button>
+          <button type="button" class="carousel-dot" data-slide-to="2" aria-label="Ir para slide 3" aria-current="false"></button>
+        </div>
+        <div class="flex items-center gap-2">
+          <button type="button" class="carousel-arrow" data-carousel-prev aria-label="Slide anterior">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+          </button>
+          <button type="button" class="carousel-arrow" data-carousel-next aria-label="Slide seguinte">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="servicos" class="py-20 lg:py-28 border-t border-ink-100">
+  <div class="max-w-content mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-6 mb-14 reveal">
+      <div class="lg:col-span-3">
+        <p class="font-mono text-[11px] tracking-[.28em] uppercase text-ink-400">N.º 02 — Serviços</p>
+      </div>
+      <h2 class="lg:col-span-9 font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl tracking-tight text-ink max-w-3xl leading-[1.05]">
+        Quatro ofícios,<br/>um só rigor.
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-x-16 gap-y-14">
+      <article class="reveal">
+        <div class="flex items-baseline gap-4 pb-4 border-b border-ink-200">
+          <span class="font-mono text-sm text-brand">01</span>
+          <h3 class="font-display font-bold text-xl text-ink">Impressão &amp; reprografia</h3>
+        </div>
+        <p class="mt-5 text-ink-400 leading-relaxed text-sm">Impressão a cores e preto-e-branco, fotocópias, digitalização e reprodução de documentos com controlo de qualidade em cada etapa.</p>
+        <ul class="mt-5 space-y-2 text-sm text-ink/70">
+          <li class="flex gap-3"><span class="text-brand">—</span>Impressão digital e offset</li>
+          <li class="flex gap-3"><span class="text-brand">—</span>Fotocópias e digitalização</li>
+          <li class="flex gap-3"><span class="text-brand">—</span>Reprodução de documentos institucionais</li>
+        </ul>
+      </article>
+
+      <article class="reveal">
+        <div class="flex items-baseline gap-4 pb-4 border-b border-ink-200">
+          <span class="font-mono text-sm text-brand">02</span>
+          <h3 class="font-display font-bold text-xl text-ink">Livros, encadernação &amp; publicações</h3>
+        </div>
+        <p class="mt-5 text-ink-400 leading-relaxed text-sm">Livros literários, técnicos e académicos; monografias, teses, brochuras, revistas e publicações administrativas.</p>
+        <ul class="mt-5 space-y-2 text-sm text-ink/70">
+          <li class="flex gap-3"><span class="text-brand">—</span>Livros e brochuras</li>
+          <li class="flex gap-3"><span class="text-brand">—</span>Encadernação em cola, costura ou argolas</li>
+          <li class="flex gap-3"><span class="text-brand">—</span>Capa mole, capa dura ou capa com orelhas</li>
+        </ul>
+      </article>
+
+      <article class="reveal">
+        <div class="flex items-baseline gap-4 pb-4 border-b border-ink-200">
+          <span class="font-mono text-sm text-brand">03</span>
+          <h3 class="font-display font-bold text-xl text-ink">Design &amp; materiais personalizados</h3>
+        </div>
+        <p class="mt-5 text-ink-400 leading-relaxed text-sm">Criação de logótipos, identidade visual, papelaria personalizada e materiais promocionais — do conceito à impressão final.</p>
+        <ul class="mt-5 space-y-2 text-sm text-ink/70">
+          <li class="flex gap-3"><span class="text-brand">—</span>Logótipos e identidade visual</li>
+          <li class="flex gap-3"><span class="text-brand">—</span>Papelaria, convites e cartões</li>
+          <li class="flex gap-3"><span class="text-brand">—</span>Materiais para redes sociais e publicidade</li>
+        </ul>
+      </article>
+
+      <article class="reveal">
+        <div class="flex items-baseline gap-4 pb-4 border-b border-ink-200">
+          <span class="font-mono text-sm text-brand">04</span>
+          <h3 class="font-display font-bold text-xl text-ink">Soluções para empresas &amp; instituições</h3>
+        </div>
+        <p class="mt-5 text-ink-400 leading-relaxed text-sm">Facturas certificadas pela AGT, recibos, papel timbrado, relatórios institucionais e materiais para organizações públicas e privadas.</p>
+        <ul class="mt-5 space-y-2 text-sm text-ink/70">
+          <li class="flex gap-3"><span class="text-brand">—</span>Facturas certificadas pela AGT</li>
+          <li class="flex gap-3"><span class="text-brand">—</span>Relatórios institucionais e administrativos</li>
+          <li class="flex gap-3"><span class="text-brand">—</span>Impressão publicitária e corporativa</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="trabalhos" class="py-20 lg:py-28 border-t border-ink-100">
+  <div class="max-w-content mx-auto px-5 lg:px-8">
+
+    <div class="grid lg:grid-cols-12 gap-6 mb-10 reveal">
+      <div class="lg:col-span-3">
+        <p class="font-mono text-[11px] tracking-[.28em] uppercase text-ink-400">N.º 03 — Trabalhos</p>
+      </div>
+      <h2 class="lg:col-span-9 font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl tracking-tight text-ink max-w-3xl leading-[1.05]">
+        Do nosso arquivo.<br/>Uma selecção recente.
+      </h2>
+    </div>
+
+    <div class="flex flex-wrap gap-2 mb-8 reveal" role="group" aria-label="Filtrar trabalhos por categoria">
+      <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">Todos</button>
+      <button type="button" class="filter-btn" data-filter="encadernacao" aria-pressed="false">Encadernação</button>
+      <button type="button" class="filter-btn" data-filter="publicacoes" aria-pressed="false">Publicações</button>
+      <button type="button" class="filter-btn" data-filter="institucional" aria-pressed="false">Institucional</button>
+    </div>
+
+    <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-12 gap-5">
+
+      <article class="portfolio-item md:col-span-7 reveal" data-cat="encadernacao">
+        <div class="crop aspect-[5/4]">
+          <div class="portfolio-img w-full h-full" id="work-slot-01">
+            <img src="./IMG-20261107-WA0003.jpg" alt="Pilha de manuais com encadernação espiral, capas impressas com cores sólidas"
+                 width="1200" height="960" loading="lazy" decoding="async"
+                 onerror="document.getElementById('work-slot-01').classList.add('is-missing')" />
+            <div class="typo">
+              <span class="font-mono text-[10px] tracking-[.25em] uppercase text-ink/40">N.º 01</span>
+              <div>
+                <div class="font-display font-extrabold text-2xl leading-tight text-ink">Encadernação<br/>espiral</div>
+                <div class="mt-3 font-mono text-[10px] tracking-[.2em] uppercase text-ink/40">Formação corporativa</div>
+              </div>
+            </div>
+            <div class="portfolio-caption">
+              <h3>Manuais de formação — encadernação espiral</h3>
+              <p>Edição em série para programa corporativo, capas a cores e interior preto-e-branco.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="portfolio-item md:col-span-5 reveal" data-cat="encadernacao">
+        <div class="crop aspect-[4/5]">
+          <div class="portfolio-img w-full h-full" id="work-slot-02">
+            <img src="./IMG-20261107-WA0007.jpg" alt="Documento técnico com capa azul-escura e encadernação espiral"
+                 width="960" height="1200" loading="lazy" decoding="async"
+                 onerror="document.getElementById('work-slot-02').classList.add('is-missing')" />
+            <div class="typo">
+              <span class="font-mono text-[10px] tracking-[.25em] uppercase text-ink/40">N.º 02</span>
+              <div>
+                <div class="font-display font-extrabold text-2xl leading-tight text-ink">Proposta de<br/>projecto</div>
+                <div class="mt-3 font-mono text-[10px] tracking-[.2em] uppercase text-ink/40">Edição técnica</div>
+              </div>
+            </div>
+            <div class="portfolio-caption">
+              <h3>Proposta de projecto</h3>
+              <p>Documento técnico com encadernação espiral e capa impressa a cores.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="portfolio-item md:col-span-4 reveal" data-cat="publicacoes">
+        <div class="crop aspect-[3/4]">
+          <div class="portfolio-img w-full h-full" id="work-slot-03">
+            <img src="assets/work-03.jpg" alt="Brochura agrafada com capa ilustrada"
+                 width="900" height="1200" loading="lazy" decoding="async"
+                 onerror="document.getElementById('work-slot-03').classList.add('is-missing')" />
+            <div class="typo">
+              <span class="font-mono text-[10px] tracking-[.25em] uppercase text-ink/40">N.º 03</span>
+              <div>
+                <div class="font-display font-extrabold text-xl leading-tight text-ink">Brochura<br/>agrafada</div>
+                <div class="mt-3 font-mono text-[10px] tracking-[.2em] uppercase text-ink/40">Corporate</div>
+              </div>
+            </div>
+            <div class="portfolio-caption">
+              <h3>Brochura agrafada</h3>
+              <p>Publicação corporativa com acabamento agrafado.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="portfolio-item md:col-span-4 reveal" data-cat="publicacoes">
+        <div class="crop aspect-[3/4]">
+          <div class="portfolio-img w-full h-full" id="work-slot-04">
+            <img src="assets/work-04.jpg" alt="Manual técnico encadernado com capa dura"
+                 width="900" height="1200" loading="lazy" decoding="async"
+                 onerror="document.getElementById('work-slot-04').classList.add('is-missing')" />
+            <div class="typo">
+              <span class="font-mono text-[10px] tracking-[.25em] uppercase text-ink/40">N.º 04</span>
+              <div>
+                <div class="font-display font-extrabold text-xl leading-tight text-ink">Manual<br/>técnico</div>
+                <div class="mt-3 font-mono text-[10px] tracking-[.2em] uppercase text-ink/40">Edição de referência</div>
+              </div>
+            </div>
+            <div class="portfolio-caption">
+              <h3>Manual técnico</h3>
+              <p>Edição em capa dura com impressão a cores e acabamento profissional.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="portfolio-item md:col-span-4 reveal" data-cat="encadernacao">
+        <div class="crop aspect-[3/4]">
+          <div class="portfolio-img w-full h-full" id="work-slot-05">
+            <img src="./IMG-20261107-WA0004.jpg" alt="Cadernos com encadernação de argolas e capas ilustradas"
+                 width="900" height="1200" loading="lazy" decoding="async"
+                 onerror="document.getElementById('work-slot-05').classList.add('is-missing')" />
+            <div class="typo">
+              <span class="font-mono text-[10px] tracking-[.25em] uppercase text-ink/40">N.º 05</span>
+              <div>
+                <div class="font-display font-extrabold text-lg leading-tight text-ink">Encadernação<br/>com argolas</div>
+                <div class="mt-3 font-mono text-[10px] tracking-[.2em] uppercase text-ink/40">Papelaria</div>
+              </div>
+            </div>
+            <div class="portfolio-caption">
+              <h3>Cadernos com argolas</h3>
+              <p>Papelaria personalizada com capas ilustradas e encadernação de argolas.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="portfolio-item md:col-span-12 reveal" data-cat="institucional">
+        <div class="crop aspect-[21/9]">
+          <div class="portfolio-img w-full h-full" id="work-slot-06">
+            <img src="./IMG-20261107-WA0005.jpg" alt="Publicação institucional com capa encadernada em tons escuros"
+                 width="1680" height="720" loading="lazy" decoding="async"
+                 onerror="document.getElementById('work-slot-06').classList.add('is-missing')" />
+            <div class="typo">
+              <span class="font-mono text-[10px] tracking-[.25em] uppercase text-ink/40">N.º 06</span>
+              <div class="flex items-end justify-between gap-6 flex-wrap">
+                <div class="font-display font-extrabold text-2xl sm:text-3xl leading-tight text-ink">Publicação institucional</div>
+                <div class="font-mono text-[10px] tracking-[.2em] uppercase text-ink/40">Edição de prestígio</div>
+              </div>
+            </div>
+            <div class="portfolio-caption">
+              <h3>Publicação institucional</h3>
+              <p>Livro de edição cuidada com capa dura e impressão a cores.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <p id="portfolio-empty" class="hidden mt-10 text-sm text-ink-400">Sem trabalhos nesta categoria.</p>
+    <p class="mt-10 max-w-2xl text-xs text-ink-400 leading-relaxed">Selecção do arquivo Genesis Reprografia. Cada imagem corresponde a um trabalho entregue pela empresa.</p>
+  </div>
+</section>
+
+<section id="orcamento" class="py-20 lg:py-28 border-t border-ink-100">
+  <div class="max-w-content mx-auto px-5 lg:px-8">
+
+    <div class="grid lg:grid-cols-12 gap-6 mb-12 reveal">
+      <div class="lg:col-span-3">
+        <p class="font-mono text-[11px] tracking-[.28em] uppercase text-ink-400">N.º 04 — Orçamento</p>
+      </div>
+      <div class="lg:col-span-9">
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl tracking-tight text-ink leading-[1.05]">
+          Simule a impressão<br/>do seu livro.
+        </h2>
+        <p class="mt-4 max-w-2xl text-ink-400 text-sm leading-relaxed">
+          Estimativa baseada na tabela oficial para livros literários, académicos e técnicos. O valor final é confirmado pela equipa comercial após análise técnica.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-12 gap-6">
+      <form id="calc-form" class="lg:col-span-7 reveal" novalidate>
+        <div class="grid sm:grid-cols-2 gap-5">
+
+          <div>
+            <label for="calc-format" class="block font-mono text-[10px] tracking-[.2em] uppercase text-ink-400 mb-2">Formato</label>
+            <select id="calc-format" class="w-full px-4 py-3 rounded-lg bg-white border border-ink-200 text-sm font-medium">
+              <option value="A5">A5 — 14,8 × 21 cm</option>
+              <option value="B5A4">B5 / A4</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="calc-pages" class="block font-mono text-[10px] tracking-[.2em] uppercase text-ink-400 mb-2">Páginas</label>
+            <select id="calc-pages" class="w-full px-4 py-3 rounded-lg bg-white border border-ink-200 text-sm font-medium">
+              <option value="100">Até 100 páginas</option>
+              <option value="101-200">101 a 200</option>
+              <option value="200-400">200 a 400</option>
+              <option value="400+">Mais de 400</option>
+            </select>
+          </div>
+
+          <div>
+            <span class="block font-mono text-[10px] tracking-[.2em] uppercase text-ink-400 mb-2">Impressão</span>
+            <div class="grid grid-cols-2 gap-2">
+              <label class="cursor-pointer">
+                <input type="radio" name="calc-color" value="color" class="peer sr-only" checked />
+                <span class="block text-center px-3 py-3 rounded-lg bg-white border border-ink-200 text-sm font-semibold peer-checked:border-brand peer-checked:text-brand transition-colors">Cores</span>
+              </label>
+              <label class="cursor-pointer">
+                <input type="radio" name="calc-color" value="bw" class="peer sr-only" />
+                <span class="block text-center px-3 py-3 rounded-lg bg-white border border-ink-200 text-sm font-semibold peer-checked:border-brand peer-checked:text-brand transition-colors">P&amp;B</span>
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <label for="calc-qty" class="block font-mono text-[10px] tracking-[.2em] uppercase text-ink-400 mb-2">Exemplares</label>
+            <input id="calc-qty" type="number" min="1" step="1" value="100" class="w-full px-4 py-3 rounded-lg bg-white border border-ink-200 text-sm font-medium" />
+          </div>
+
+          <div class="sm:col-span-2 p-4 rounded-lg bg-white border border-ink-200">
+            <span class="block font-mono text-[10px] tracking-[.2em] uppercase text-ink-400 mb-2">O livro terá orelhas?</span>
+            <div class="grid grid-cols-2 gap-2">
+              <label class="cursor-pointer">
+                <input type="radio" name="calc-orelhas" value="sem" class="peer sr-only" checked />
+                <span class="block text-center px-3 py-2.5 rounded-md border border-ink-200 text-sm font-semibold peer-checked:border-ink peer-checked:bg-ink peer-checked:text-white transition-colors">Sem orelhas</span>
+              </label>
+              <label class="cursor-pointer">
+                <input type="radio" name="calc-orelhas" value="com" class="peer sr-only" />
+                <span class="block text-center px-3 py-2.5 rounded-md border border-ink-200 text-sm font-semibold peer-checked:border-ink peer-checked:bg-ink peer-checked:text-white transition-colors">Com orelhas</span>
+              </label>
+            </div>
+            <p class="mt-2 text-[11px] text-ink-400 leading-relaxed">A opção com orelhas é encaminhada para orçamento personalizado.</p>
+          </div>
+        </div>
+
+        <details class="mt-6 group">
+          <summary class="cursor-pointer inline-flex items-center gap-2 font-mono text-[10px] tracking-[.2em] uppercase text-ink-400 hover:text-brand">
+            <span class="group-open:hidden">+ Opções avançadas</span>
+            <span class="hidden group-open:inline">− Opções avançadas</span>
+          </summary>
+          <div class="mt-5 grid sm:grid-cols-2 gap-5">
+            <div>
+              <label for="calc-paper" class="block font-mono text-[10px] tracking-[.2em] uppercase text-ink-400 mb-2">Papel</label>
+              <select id="calc-paper" class="w-full px-4 py-3 rounded-lg bg-white border border-ink-200 text-sm font-medium">
+                <option value="padrao">Padrão (tabela)</option>
+                <option value="couche">Couché</option>
+                <option value="reciclado">Reciclado</option>
+                <option value="especial">Papel especial</option>
+              </select>
+            </div>
+            <div>
+              <label for="calc-grammage" class="block font-mono text-[10px] tracking-[.2em] uppercase text-ink-400 mb-2">Gramagem</label>
+              <select id="calc-grammage" class="w-full px-4 py-3 rounded-lg bg-white border border-ink-200 text-sm font-medium">
+                <option value="padrao">Padrão</option>
+                <option value="75">75 g/m²</option>
+                <option value="90">90 g/m²</option>
+                <option value="120">120 g/m²</option>
+                <option value="150">150 g/m²</option>
+              </select>
+            </div>
+            <div>
+              <label for="calc-cover" class="block font-mono text-[10px] tracking-[.2em] uppercase text-ink-400 mb-2">Tipo de capa</label>
+              <select id="calc-cover" class="w-full px-4 py-3 rounded-lg bg-white border border-ink-200 text-sm font-medium">
+                <option value="padrao">Capa mole (padrão)</option>
+                <option value="dura">Capa dura</option>
+              </select>
+            </div>
+            <div>
+              <label for="calc-binding" class="block font-mono text-[10px] tracking-[.2em] uppercase text-ink-400 mb-2">Encadernação</label>
+              <select id="calc-binding" class="w-full px-4 py-3 rounded-lg bg-white border border-ink-200 text-sm font-medium">
+                <option value="padrao">Cola quente (padrão)</option>
+                <option value="argolas">Argolas</option>
+                <option value="agrafada">Agrafada</option>
+                <option value="costurada">Costurada</option>
+              </select>
+            </div>
+            <div class="sm:col-span-2">
+              <label for="calc-finish" class="block font-mono text-[10px] tracking-[.2em] uppercase text-ink-400 mb-2">Acabamento</label>
+              <select id="calc-finish" class="w-full px-4 py-3 rounded-lg bg-white border border-ink-200 text-sm font-medium">
+                <option value="padrao">Nenhum</option>
+                <option value="plastificacao">Plastificação</option>
+                <option value="vinco">Vinco / Dobra</option>
+                <option value="corte">Corte especial</option>
+              </select>
+            </div>
+          </div>
+        </details>
+
+        <p class="mt-6 text-xs text-ink-400 leading-relaxed">Opções fora da tabela oficial são automaticamente encaminhadas para orçamento sob consulta.</p>
+      </form>
+
+      <aside class="lg:col-span-5 reveal">
+        <div class="bg-ink text-white p-7 rounded-lg lg:sticky lg:top-24">
+          <div class="font-mono text-[10px] tracking-[.24em] uppercase text-white/40 mb-1">Estimativa</div>
+          <div id="calc-tier" class="text-sm text-white/70 mb-6">—</div>
+
+          <div id="calc-normal" role="status" aria-live="polite">
+            <div class="flex items-baseline justify-between gap-4 py-3 border-b border-white/10">
+              <span class="text-sm text-white/60">Preço unitário base</span>
+              <span id="calc-unit" class="font-display font-bold text-lg">—</span>
+            </div>
+            <div class="flex items-baseline justify-between gap-4 py-3 border-b border-white/10">
+              <span class="text-sm text-white/60">Exemplares</span>
+              <span id="calc-qty-out" class="font-display font-bold text-lg">—</span>
+            </div>
+            <div class="flex items-baseline justify-between gap-4 pt-5">
+              <span class="text-sm text-white/60">Total estimado</span>
+              <span id="calc-total" class="font-display font-extrabold text-3xl text-brand">—</span>
+            </div>
+            <a id="calc-wa" href="#" target="_blank" rel="noopener" class="mt-6 inline-flex items-center justify-center gap-2 w-full px-5 py-3.5 rounded-full bg-brand hover:bg-brand-600 transition-colors font-semibold">
+              Solicitar orçamento
+            </a>
+          </div>
+
+          <div id="calc-quote" class="hidden" role="status" aria-live="polite">
+            <div class="p-5 rounded-lg bg-white/5 border border-white/10">
+              <p id="calc-quote-reason" class="text-sm text-white/70 leading-relaxed">Esta configuração requer validação comercial.</p>
+            </div>
+            <a id="calc-wa-quote" href="#" target="_blank" rel="noopener" class="mt-6 inline-flex items-center justify-center gap-2 w-full px-5 py-3.5 rounded-full bg-brand hover:bg-brand-600 transition-colors font-semibold">
+              Falar com a equipa comercial
+            </a>
+          </div>
+
+          <p class="mt-6 text-[11px] text-white/30 leading-relaxed">* Estimativa não vinculativa. Valor final confirmado após análise técnica.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="parceiros" class="py-20 lg:py-24 border-t border-ink-100 overflow-hidden">
+  <div class="max-w-content mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-6 mb-10 reveal">
+      <div class="lg:col-span-3">
+        <p class="font-mono text-[11px] tracking-[.28em] uppercase text-ink-400">N.º 05 — Parceiros</p>
+      </div>
+      <h2 class="lg:col-span-9 font-display font-extrabold text-2xl sm:text-3xl lg:text-4xl tracking-tight text-ink max-w-3xl leading-[1.1]">
+        Instituições e parceiros<br/>que fazem parte do nosso percurso.
+      </h2>
+    </div>
+  </div>
+
+  <div class="marquee" aria-label="Logótipos de instituições parceiras" style="--marquee-duration: 45s;">
+    <div class="marquee-track">
+
+      <div class="shrink-0 w-[220px] px-5 py-5 rounded-lg border border-ink-200 bg-white text-center">
+        <div class="partner-logo">
+          <img src="assets/partners/bai.svg" alt="BAI — Banco Angolano de Investimentos" loading="lazy"
+               onerror="this.parentElement.classList.add('is-missing')" />
+          <span class="partner-fallback">BAI</span>
+        </div>
+        <p class="text-[10px] uppercase tracking-[.14em] text-ink-400">Banco Angolano de Investimentos</p>
+      </div>
+
+      <div class="shrink-0 w-[220px] px-5 py-5 rounded-lg border border-ink-200 bg-white text-center">
+        <div class="partner-logo">
+          <img src="assets/partners/cuamm.svg" alt="Doctors with Africa — CUAMM" loading="lazy"
+               onerror="this.parentElement.classList.add('is-missing')" />
+          <span class="partner-fallback">CUAMM</span>
+        </div>
+        <p class="text-[10px] uppercase tracking-[.14em] text-ink-400">Doctors with Africa</p>
+      </div>
+
+      <div class="shrink-0 w-[220px] px-5 py-5 rounded-lg border border-ink-200 bg-white text-center">
+        <div class="partner-logo">
+          <img src="assets/partners/inss.svg" alt="INSS — Instituto Nacional de Segurança Social" loading="lazy"
+               onerror="this.parentElement.classList.add('is-missing')" />
+          <span class="partner-fallback">INSS</span>
+        </div>
+        <p class="text-[10px] uppercase tracking-[.14em] text-ink-400">Segurança Social</p>
+      </div>
+
+      <div class="shrink-0 w-[220px] px-5 py-5 rounded-lg border border-ink-200 bg-white text-center">
+        <div class="partner-logo">
+          <img src="assets/partners/a-angola.svg" alt="A… Angola — instituição parceira" loading="lazy"
+               onerror="this.parentElement.classList.add('is-missing')" />
+          <span class="partner-fallback">A… Angola</span>
+        </div>
+        <p class="text-[10px] uppercase tracking-[.14em] text-ink-400">Instituição parceira</p>
+      </div>
+
+      <div class="shrink-0 w-[220px] px-5 py-5 rounded-lg border border-ink-200 bg-white text-center">
+        <div class="partner-logo">
+          <img src="assets/partners/sector-saude.svg" alt="Sector Saúde" loading="lazy"
+               onerror="this.parentElement.classList.add('is-missing')" />
+          <span class="partner-fallback">Sector Saúde</span>
+        </div>
+        <p class="text-[10px] uppercase tracking-[.14em] text-ink-400">Organização parceira</p>
+      </div>
+
+      <div class="shrink-0 w-[220px] px-5 py-5 rounded-lg border border-ink-200 bg-white text-center">
+        <div class="partner-logo">
+          <img src="assets/partners/sector-educacao.svg" alt="Sector Educação" loading="lazy"
+               onerror="this.parentElement.classList.add('is-missing')" />
+          <span class="partner-fallback">Sector Educação</span>
+        </div>
+        <p class="text-[10px] uppercase tracking-[.14em] text-ink-400">Organização parceira</p>
+      </div>
+
+      <div class="shrink-0 w-[220px] px-5 py-5 rounded-lg border border-ink-200 bg-white text-center" aria-hidden="true">
+        <div class="partner-logo"><img src="assets/partners/bai.svg" alt="" loading="lazy" onerror="this.parentElement.classList.add('is-missing')" /><span class="partner-fallback">BAI</span></div>
+        <p class="text-[10px] uppercase tracking-[.14em] text-ink-400">Banco Angolano de Investimentos</p>
+      </div>
+      <div class="shrink-0 w-[220px] px-5 py-5 rounded-lg border border-ink-200 bg-white text-center" aria-hidden="true">
+        <div class="partner-logo"><img src="assets/partners/cuamm.svg" alt="" loading="lazy" onerror="this.parentElement.classList.add('is-missing')" /><span class="partner-fallback">CUAMM</span></div>
+        <p class="text-[10px] uppercase tracking-[.14em] text-ink-400">Doctors with Africa</p>
+      </div>
+      <div class="shrink-0 w-[220px] px-5 py-5 rounded-lg border border-ink-200 bg-white text-center" aria-hidden="true">
+        <div class="partner-logo"><img src="assets/partners/inss.svg" alt="" loading="lazy" onerror="this.parentElement.classList.add('is-missing')" /><span class="partner-fallback">INSS</span></div>
+        <p class="text-[10px] uppercase tracking-[.14em] text-ink-400">Segurança Social</p>
+      </div>
+      <div class="shrink-0 w-[220px] px-5 py-5 rounded-lg border border-ink-200 bg-white text-center" aria-hidden="true">
+        <div class="partner-logo"><img src="assets/partners/a-angola.svg" alt="" loading="lazy" onerror="this.parentElement.classList.add('is-missing')" /><span class="partner-fallback">A… Angola</span></div>
+        <p class="text-[10px] uppercase tracking-[.14em] text-ink-400">Instituição parceira</p>
+      </div>
+      <div class="shrink-0 w-[220px] px-5 py-5 rounded-lg border border-ink-200 bg-white text-center" aria-hidden="true">
+        <div class="partner-logo"><img src="assets/partners/sector-saude.svg" alt="" loading="lazy" onerror="this.parentElement.classList.add('is-missing')" /><span class="partner-fallback">Sector Saúde</span></div>
+        <p class="text-[10px] uppercase tracking-[.14em] text-ink-400">Organização parceira</p>
+      </div>
+      <div class="shrink-0 w-[220px] px-5 py-5 rounded-lg border border-ink-200 bg-white text-center" aria-hidden="true">
+        <div class="partner-logo"><img src="assets/partners/sector-educacao.svg" alt="" loading="lazy" onerror="this.parentElement.classList.add('is-missing')" /><span class="partner-fallback">Sector Educação</span></div>
+        <p class="text-[10px] uppercase tracking-[.14em] text-ink-400">Organização parceira</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="max-w-content mx-auto px-5 lg:px-8 mt-8">
+    <p class="text-xs text-ink-400 max-w-2xl leading-relaxed">
+      Os logótipos vectoriais oficiais serão integrados após validação e entrega dos ficheiros pelos parceiros. Enquanto não existirem, cada parceiro é apresentado apenas pelo nome.
+    </p>
+  </div>
+</section>
+
+<section id="equipa" class="py-20 lg:py-28 border-t border-ink-100">
+  <div class="max-w-content mx-auto px-5 lg:px-8">
+
+    <div class="grid lg:grid-cols-12 gap-6 mb-14 reveal">
+      <div class="lg:col-span-3">
+        <p class="font-mono text-[11px] tracking-[.28em] uppercase text-ink-400">N.º 06 — Equipa</p>
+      </div>
+      <div class="lg:col-span-9">
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl tracking-tight text-ink leading-[1.05]">
+          Estrutura organizacional.
+        </h2>
+        <p class="mt-4 max-w-2xl text-ink-400 text-sm leading-relaxed">
+          Hierarquia definida da Genesis Reprografia — da direcção executiva às equipas técnicas que executam cada trabalho.
+        </p>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="org-tree">
+
+        <div class="flex justify-center">
+          <div class="org-node org-primary max-w-xs w-full">
+            <div class="org-photo">
+              <img src="./DG.png"
+                   alt="Fotografia de Eng.º Júlio Manuel Garcia, Director Geral da Genesis Reprografia"
+                   loading="lazy"
+                   onerror="this.parentElement.classList.add('is-missing')" />
+              <span class="org-photo-fallback">DG</span>
+              <div class="org-photo-overlay">
+                <div class="org-photo-info">
+                  <div class="org-photo-name">ENGº JÚLIO MANUEL GARCIA</div>
+                  <div class="org-photo-role">Director Geral</div>
+                  <div class="org-photo-area">Direcção Executiva</div>
+                </div>
+                <div class="org-photo-social">
+                  <a href="#" data-pending aria-disabled="true" aria-label="LinkedIn — Eng.º Júlio Manuel Garcia"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2ZM8 19H5v-9h3v9ZM6.5 8.25A1.75 1.75 0 1 1 8.3 6.5a1.78 1.78 0 0 1-1.8 1.75ZM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93a1.56 1.56 0 0 0-1.45 1.65V19h-3v-9h2.9v1.3a3.11 3.11 0 0 1 2.7-1.4c1.55 0 3.15.94 3.15 3.39V19Z"/></svg></a>
+                  <a href="#" data-pending aria-disabled="true" aria-label="Facebook — Eng.º Júlio Manuel Garcia"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H7v3h3v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1Z"/></svg></a>
+                  <a href="#" data-pending aria-disabled="true" aria-label="Email — Eng.º Júlio Manuel Garcia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="org-v"></div>
+
+        <div class="org-branches-3">
+
+          <div class="org-branch-3">
+            <div class="org-node w-full">
+              <div class="org-photo">
+                <img src="./Retrato da Diretora Comercial no Escritório.png"
+                     alt="Fotografia de Dra. Evaldina Valente Bambi, Directora Comercial"
+                     loading="lazy"
+                     onerror="this.parentElement.classList.add('is-missing')" />
+                <span class="org-photo-fallback">DC</span>
+                <div class="org-photo-overlay">
+                  <div class="org-photo-info">
+                    <div class="org-photo-name">Dra. EVALDINA VALENTE BAMBI</div>
+                    <div class="org-photo-role">Directora Comercial</div>
+                    <div class="org-photo-area">Comercial · Clientes</div>
+                  </div>
+                  <div class="org-photo-social">
+                    <a href="#" data-pending aria-disabled="true" aria-label="LinkedIn — Dra. Evaldina Valente Bambi"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2ZM8 19H5v-9h3v9ZM6.5 8.25A1.75 1.75 0 1 1 8.3 6.5a1.78 1.78 0 0 1-1.8 1.75ZM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93a1.56 1.56 0 0 0-1.45 1.65V19h-3v-9h2.9v1.3a3.11 3.11 0 0 1 2.7-1.4c1.55 0 3.15.94 3.15 3.39V19Z"/></svg></a>
+                    <a href="#" data-pending aria-disabled="true" aria-label="Facebook — Dra. Evaldina Valente Bambi"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H7v3h3v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1Z"/></svg></a>
+                    <a href="#" data-pending aria-disabled="true" aria-label="Email — Dra. Evaldina Valente Bambi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="org-branch-3">
+            <div class="org-node w-full">
+              <div class="org-photo">
+                <img src="..."
+                     alt="Fotografia de Eng.º Armando Baltazar, Director de Operações"
+                     loading="lazy"
+                     onerror="this.parentElement.classList.add('is-missing')" />
+                <span class="org-photo-fallback">DT</span>
+                <div class="org-photo-overlay">
+                  <div class="org-photo-info">
+                    <div class="org-photo-name"></div>
+                    <div class="org-photo-role">Director de Operações</div>
+                    <div class="org-photo-area">Técnico · Produção</div>
+                  </div>
+                  <div class="org-photo-social">
+                    <a href="#" data-pending aria-disabled="true" aria-label="LinkedIn — Eng.º Armando Baltazar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2ZM8 19H5v-9h3v9ZM6.5 8.25A1.75 1.75 0 1 1 8.3 6.5a1.78 1.78 0 0 1-1.8 1.75ZM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93a1.56 1.56 0 0 0-1.45 1.65V19h-3v-9h2.9v1.3a3.11 3.11 0 0 1 2.7-1.4c1.55 0 3.15.94 3.15 3.39V19Z"/></svg></a>
+                    <a href="#" data-pending aria-disabled="true" aria-label="Facebook — Eng.º Armando Baltazar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H7v3h3v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1Z"/></svg></a>
+                    <a href="#" data-pending aria-disabled="true" aria-label="Email — Eng.º Armando Baltazar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="org-branch-3">
+            <div class="org-node w-full">
+              <div class="org-photo">
+                <img src="./DA.png"
+                     alt="Fotografia de Dra. Júlieta Jud'ce, Directora Administrativa"
+                     loading="lazy"
+                     onerror="this.parentElement.classList.add('is-missing')" />
+                <span class="org-photo-fallback">DA</span>
+                <div class="org-photo-overlay">
+                  <div class="org-photo-info">
+                    <div class="org-photo-name">Dra. JÚLIETA JUD'CE</div>
+                    <div class="org-photo-role">Directora Administrativa</div>
+                    <div class="org-photo-area">Administração · Finanças</div>
+                  </div>
+                  <div class="org-photo-social">
+                    <a href="#" data-pending aria-disabled="true" aria-label="LinkedIn — Dra. Júlieta Jud'ce"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2ZM8 19H5v-9h3v9ZM6.5 8.25A1.75 1.75 0 1 1 8.3 6.5a1.78 1.78 0 0 1-1.8 1.75ZM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93a1.56 1.56 0 0 0-1.45 1.65V19h-3v-9h2.9v1.3a3.11 3.11 0 0 1 2.7-1.4c1.55 0 3.15.94 3.15 3.39V19Z"/></svg></a>
+                    <a href="#" data-pending aria-disabled="true" aria-label="Facebook — Dra. Júlieta Jud'ce"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H7v3h3v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1Z"/></svg></a>
+                    <a href="#" data-pending aria-disabled="true" aria-label="Email — Dra. Júlieta Jud'ce"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="org-connectors-3">
+          <div class="org-v"></div>
+          <div class="org-v"></div>
+          <div class="org-v"></div>
+        </div>
+
+        <div class="org-branches-3 org-branches-flat">
+
+
+          <div class="org-branch-3">
+            <div class="org-node w-full">
+              <div class="org-photo">
+                <img src="./Retrato do Líder de Equipa no Escritório.png"
+                     alt="Fotografia de Eng.º Armando Baltazar, Director de Operações"
+                     loading="lazy"
+                     onerror="this.parentElement.classList.add('is-missing')" />
+                <span class="org-photo-fallback">DT</span>
+                <div class="org-photo-overlay">
+                  <div class="org-photo-info">
+                    <div class="org-photo-name">ENGº ARMANDO BALTAZAR</div>
+                    <div class="org-photo-role">Team Leader</div>
+                    <div class="org-photo-area">Técnico · Produção</div>
+                  </div>
+                  <div class="org-photo-social">
+                    <a href="#" data-pending aria-disabled="true" aria-label="LinkedIn — Eng.º Armando Baltazar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2ZM8 19H5v-9h3v9ZM6.5 8.25A1.75 1.75 0 1 1 8.3 6.5a1.78 1.78 0 0 1-1.8 1.75ZM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93a1.56 1.56 0 0 0-1.45 1.65V19h-3v-9h2.9v1.3a3.11 3.11 0 0 1 2.7-1.4c1.55 0 3.15.94 3.15 3.39V19Z"/></svg></a>
+                    <a href="#" data-pending aria-disabled="true" aria-label="Facebook — Eng.º Armando Baltazar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H7v3h3v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1Z"/></svg></a>
+                    <a href="#" data-pending aria-disabled="true" aria-label="Email — Eng.º Armando Baltazar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="org-branch-3">
+            <div class="org-node w-full">
+              <div class="org-photo">
+                <img src="./TEAM LIDER.png"
+                     alt="Fotografia de Eng.º Armando Baltazar, Director de Operações"
+                     loading="lazy"
+                     onerror="this.parentElement.classList.add('is-missing')" />
+                <span class="org-photo-fallback">DT</span>
+                <div class="org-photo-overlay">
+                  <div class="org-photo-info">
+                    <div class="org-photo-name">FRANCISCO BERNARDO</div>
+                    <div class="org-photo-role">Team Leader</div>
+                    <div class="org-photo-area">Técnico · Produção</div>
+                  </div>
+                  <div class="org-photo-social">
+                    <a href="#" data-pending aria-disabled="true" aria-label="LinkedIn — Eng.º Armando Baltazar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2ZM8 19H5v-9h3v9ZM6.5 8.25A1.75 1.75 0 1 1 8.3 6.5a1.78 1.78 0 0 1-1.8 1.75ZM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93a1.56 1.56 0 0 0-1.45 1.65V19h-3v-9h2.9v1.3a3.11 3.11 0 0 1 2.7-1.4c1.55 0 3.15.94 3.15 3.39V19Z"/></svg></a>
+                    <a href="#" data-pending aria-disabled="true" aria-label="Facebook — Eng.º Armando Baltazar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H7v3h3v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1Z"/></svg></a>
+                    <a href="#" data-pending aria-disabled="true" aria-label="Email — Eng.º Armando Baltazar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="org-branch-3">
+            <div class="org-node w-full">
+              <div class="org-photo is-missing">
+                <span class="org-photo-fallback">TL</span>
+                <div class="org-photo-overlay">
+                  <div class="org-photo-info">
+                    <div class="org-photo-role">Team Leader</div>
+                    <div class="org-photo-area">Equipa Administrativa</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="mt-10 max-w-2xl text-xs text-ink-400 leading-relaxed">
+          Fotografias, nomes completos e contactos dos Team Leaders serão integrados após autorização expressa da empresa.
+        </p>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="contactos" class="py-20 lg:py-28 border-t border-ink-100">
+  <div class="max-w-content mx-auto px-5 lg:px-8">
+
+    <div class="grid lg:grid-cols-12 gap-6 mb-12 reveal">
+      <div class="lg:col-span-3">
+        <p class="font-mono text-[11px] tracking-[.28em] uppercase text-ink-400">N.º 07 — Contactos</p>
+      </div>
+      <h2 class="lg:col-span-9 font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl tracking-tight text-ink max-w-3xl leading-[1.05]">
+        O próximo projecto<br/>começa aqui.
+      </h2>
+    </div>
+
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16">
+      <div class="lg:col-span-5 reveal">
+        <p class="text-ink-400 leading-relaxed max-w-md">
+          Estamos no centro do Uíge, prontos para receber o seu projecto. Visite-nos, ligue ou envie uma mensagem pelo WhatsApp.
+        </p>
+
+        <dl class="mt-10 space-y-6">
+          <div>
+            <dt class="font-mono text-[10px] tracking-[.24em] uppercase text-ink-400 mb-1">Telefone / WhatsApp</dt>
+            <dd><a href="tel:+244928114472" class="font-display font-semibold text-lg text-ink hover:text-brand transition-colors">+244 928 114 472</a></dd>
+          </div>
+          <div>
+            <dt class="font-mono text-[10px] tracking-[.24em] uppercase text-ink-400 mb-1">Localização</dt>
+            <dd class="text-ink leading-relaxed">Rua do Comércio, Centro,<br/>rés-do-chão, Loja n.º 17A — Uíge</dd>
+          </div>
+          <div>
+            <dt class="font-mono text-[10px] tracking-[.24em] uppercase text-ink-400 mb-1">Redes sociais</dt>
+            <dd class="mt-2 flex items-center gap-3">
+              <a href="https://www.facebook.com/search/top?q=Genesis%20Reprografia%20e%20Gr%C3%A1fica" target="_blank" rel="noopener noreferrer" aria-label="Facebook — Genesis Reprografia e Gráfica" class="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-ink-200 text-ink hover:border-brand hover:text-brand transition-colors">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H7v3h3v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1Z"/></svg>
+              </a>
+              <a href="https://wa.me/244928114472" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp — +244 928 114 472" class="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-ink-200 text-ink hover:border-wa hover:text-wa transition-colors">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.3 1.3-1.8 1.4-.5.1-1 .1-1.7-.1-.4-.1-1-.3-1.7-.6a12 12 0 0 1-4.6-4.1c-.3-.5-.8-1.3-.8-2.4 0-1.1.6-1.7.8-1.9.2-.2.4-.3.6-.3h.4c.1 0 .3-.1.5.4l.7 1.6c.1.1.1.3 0 .4l-.3.5-.4.4c-.1.1-.2.3-.1.5.1.2.6 1 1.3 1.6.9.8 1.6 1 1.8 1.2.2.1.4.1.5-.1l.6-.8c.1-.2.3-.2.5-.1l1.6.7c.2.1.3.2.3.3 0 .1 0 .8-.2 1.4Z"/></svg>
+              </a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="lg:col-span-7 reveal">
+        <form id="contact-form" class="space-y-4" novalidate>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="cf-name" class="block font-mono text-[10px] tracking-[.2em] uppercase text-ink-400 mb-2">Nome</label>
+              <input id="cf-name" type="text" required placeholder="O seu nome" class="w-full px-4 py-3 rounded-lg bg-white border border-ink-200 text-sm" />
+            </div>
+            <div>
+              <label for="cf-phone" class="block font-mono text-[10px] tracking-[.2em] uppercase text-ink-400 mb-2">Telefone</label>
+              <input id="cf-phone" type="tel" required placeholder="+244 ___ ___ ___" class="w-full px-4 py-3 rounded-lg bg-white border border-ink-200 text-sm" />
+            </div>
+          </div>
+          <div>
+            <label for="cf-service" class="block font-mono text-[10px] tracking-[.2em] uppercase text-ink-400 mb-2">Serviço</label>
+            <select id="cf-service" class="w-full px-4 py-3 rounded-lg bg-white border border-ink-200 text-sm">
+              <option>Impressão e reprografia</option>
+              <option>Livros e publicações</option>
+              <option>Design gráfico</option>
+              <option>Papelaria personalizada</option>
+              <option>Acabamentos</option>
+              <option>Documentos empresariais</option>
+              <option>Impressão publicitária</option>
+            </select>
+          </div>
+          <div>
+            <label for="cf-msg" class="block font-mono text-[10px] tracking-[.2em] uppercase text-ink-400 mb-2">Mensagem</label>
+            <textarea id="cf-msg" rows="4" placeholder="Descreva o seu projecto..." class="w-full px-4 py-3 rounded-lg bg-white border border-ink-200 text-sm"></textarea>
+          </div>
+          <a id="cf-send" href="#" target="_blank" rel="noopener" class="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-full bg-brand text-white font-semibold hover:bg-brand-600 transition-colors">
+            Enviar por WhatsApp
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <p id="cf-feedback" class="hidden text-xs text-center text-ink-400" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="border-t border-ink-100 py-14">
+  <div class="max-w-content mx-auto px-5 lg:px-8">
+
+    <div class="grid md:grid-cols-3 gap-10 pb-10 border-b border-ink-100">
+      <div>
+        <a href="#inicio" class="flex items-center gap-2.5">
+          <span class="inline-flex items-center justify-center w-8 h-8 rounded-md bg-brand text-white font-display font-extrabold text-sm">G</span>
+          <span class="font-display font-extrabold text-ink"><span class="text-brand">GENESIS</span> REPROGRAFIA</span>
+        </a>
+        <p class="mt-4 text-xs text-ink-400 leading-relaxed max-w-xs">
+          Gráfica em Uíge desde 2024. Impressão, encadernação, papelaria personalizada e publicações.
+        </p>
+        <div class="mt-4 flex items-center gap-2">
+          <a href="https://www.facebook.com/search/top?q=Genesis%20Reprografia%20e%20Gr%C3%A1fica" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="inline-flex items-center justify-center w-9 h-9 rounded-md border border-ink-200 text-ink-400 hover:border-brand hover:text-brand transition-colors">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H7v3h3v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1Z"/></svg>
+          </a>
+          <a href="https://wa.me/244928114472" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="inline-flex items-center justify-center w-9 h-9 rounded-md border border-ink-200 text-ink-400 hover:border-wa hover:text-wa transition-colors">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.3 1.3-1.8 1.4-.5.1-1 .1-1.7-.1-.4-.1-1-.3-1.7-.6a12 12 0 0 1-4.6-4.1c-.3-.5-.8-1.3-.8-2.4 0-1.1.6-1.7.8-1.9.2-.2.4-.3.6-.3h.4c.1 0 .3-.1.5.4l.7 1.6c.1.1.1.3 0 .4l-.3.5-.4.4c-.1.1-.2.3-.1.5.1.2.6 1 1.3 1.6.9.8 1.6 1 1.8 1.2.2.1.4.1.5-.1l.6-.8c.1-.2.3-.2.5-.1l1.6.7c.2.1.3.2.3.3 0 .1 0 .8-.2 1.4Z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <nav aria-label="Rodapé — serviços">
+        <p class="font-mono text-[10px] tracking-[.24em] uppercase text-ink-400 mb-3">Serviços</p>
+        <ul class="space-y-2 text-sm text-ink/70">
+          <li><a href="#servicos" class="hover:text-brand transition-colors">Impressão e reprografia</a></li>
+          <li><a href="#servicos" class="hover:text-brand transition-colors">Livros e publicações</a></li>
+          <li><a href="#servicos" class="hover:text-brand transition-colors">Design e materiais</a></li>
+          <li><a href="#servicos" class="hover:text-brand transition-colors">Empresas e instituições</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Rodapé — empresa">
+        <p class="font-mono text-[10px] tracking-[.24em] uppercase text-ink-400 mb-3">Empresa</p>
+        <ul class="space-y-2 text-sm text-ink/70">
+          <li><a href="#trabalhos" class="hover:text-brand transition-colors">Trabalhos</a></li>
+          <li><a href="#parceiros" class="hover:text-brand transition-colors">Parceiros</a></li>
+          <li><a href="#orcamento" class="hover:text-brand transition-colors">Orçamento</a></li>
+          <li><a href="#equipa" class="hover:text-brand transition-colors">Equipa</a></li>
+          <li><a href="#contactos" class="hover:text-brand transition-colors">Contactos</a></li>
+          <li><a href="tel:+244928114472" class="hover:text-brand transition-colors">+244 928 114 472</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="mt-10 pt-8 border-t border-ink-100">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-ink-400">
+        <p>© <span id="year"></span> Genesis Reprografia (Pixel Print, Lda.) · Uíge, Angola · Todos os direitos reservados.</p>
+        <p class="flex items-center gap-1.5 flex-wrap">
+          Website desenvolvido por
+          <span class="font-display font-bold text-ink">AB PrimeSoft</span>
+          <span class="text-ink-300">— Tecnologias &amp; Conectividade</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/244928114472?text=Ol%C3%A1%20Genesis%20Reprografia!%20Gostaria%20de%20solicitar%20mais%20informa%C3%A7%C3%B5es."
+   target="_blank" rel="noopener"
+   class="wa-float"
+   aria-label="Contactar a Genesis Reprografia via WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.3 1.3-1.8 1.4-.5.1-1 .1-1.7-.1-.4-.1-1-.3-1.7-.6a12 12 0 0 1-4.6-4.1c-.3-.5-.8-1.3-.8-2.4 0-1.1.6-1.7.8-1.9.2-.2.4-.3.6-.3h.4c.1 0 .3-.1.5.4l.7 1.6c.1.1.1.3 0 .4l-.3.5-.4.4c-.1.1-.2.3-.1.5.1.2.6 1 1.3 1.6.9.8 1.6 1 1.8 1.2.2.1.4.1.5-.1l.6-.8c.1-.2.3-.2.5-.1l1.6.7c.2.1.3.2.3.3 0 .1 0 .8-.2 1.4Z"/>
+  </svg>
+</a>
+
+<script>
+(() => {
+  'use strict';
+
+  const CONFIG = { phone: '244928114472' };
+  const $  = (s, p = document) => p.querySelector(s);
+  const $$ = (s, p = document) => Array.from(p.querySelectorAll(s));
+  const fmtKz = n => new Intl.NumberFormat('pt-AO', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(n) + ' Kz';
+
+  /* Bloquear links pendentes (redes sociais e emails ainda não fornecidos) */
+  $$('a[data-pending]').forEach(a => {
+    a.addEventListener('click', e => e.preventDefault());
+  });
+
+  /* Header */
+  const header = $('#site-header');
+  const onScroll = () => {
+    header.classList.toggle('is-scrolled', window.scrollY > 12);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* Menu móvel */
+  const menuToggle = $('#menu-toggle');
+  const mobileMenu = $('#mobile-menu');
+  menuToggle.addEventListener('click', () => {
+    const open = !mobileMenu.classList.contains('hidden');
+    mobileMenu.classList.toggle('hidden');
+    menuToggle.setAttribute('aria-expanded', String(!open));
+    header.classList.toggle('menu-open', !open);
+  });
+  $$('#mobile-menu a').forEach(a => a.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    header.classList.remove('menu-open');
+  }));
+
+  /* Hero carousel */
+  (function () {
+    const carousel = $('#hero-carousel');
+    if (!carousel) return;
+
+    const slides = $$('.carousel-slide', carousel);
+    const dots = $$('.carousel-dot', carousel);
+    const prevBtn = carousel.querySelector('[data-carousel-prev]');
+    const nextBtn = carousel.querySelector('[data-carousel-next]');
+    if (!slides.length) return;
+
+    let current = 0;
+    let timer = null;
+    let paused = false;
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const interval = 6500;
+
+    function goTo(i) {
+      const total = slides.length;
+      current = ((i % total) + total) % total;
+      slides.forEach((s, idx) => {
+        const active = idx === current;
+        s.classList.toggle('active', active);
+        s.setAttribute('aria-hidden', String(!active));
+        s.querySelectorAll('a, button').forEach(el => {
+          if (active) el.removeAttribute('tabindex');
+          else el.setAttribute('tabindex', '-1');
+        });
+      });
+      dots.forEach((d, idx) => d.setAttribute('aria-current', idx === current ? 'true' : 'false'));
+    }
+
+    function start() {
+      stop();
+      if (prefersReduced || paused) return;
+      timer = setInterval(() => goTo(current + 1), interval);
+    }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+    prevBtn?.addEventListener('click', () => { goTo(current - 1); start(); });
+    nextBtn?.addEventListener('click', () => { goTo(current + 1); start(); });
+    dots.forEach((d, i) => d.addEventListener('click', () => { goTo(i); start(); }));
+
+    carousel.addEventListener('mouseenter', () => { paused = true; stop(); });
+    carousel.addEventListener('mouseleave', () => { paused = false; start(); });
+    carousel.addEventListener('focusin', () => { paused = true; stop(); });
+    carousel.addEventListener('focusout', (e) => {
+      if (!carousel.contains(e.relatedTarget)) { paused = false; start(); }
+    });
+    carousel.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(current - 1); start(); }
+      else if (e.key === 'ArrowRight') { e.preventDefault(); goTo(current + 1); start(); }
+    });
+    document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
+
+    goTo(0);
+    start();
+  })();
+
+  /* Filtros do portefólio */
+  (function () {
+    const filterBtns = $$('.filter-btn');
+    const items = $$('#portfolio-grid .portfolio-item');
+    const emptyMsg = $('#portfolio-empty');
+    if (!filterBtns.length || !items.length) return;
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+        filterBtns.forEach(b => b.setAttribute('aria-pressed', 'false'));
+        btn.setAttribute('aria-pressed', 'true');
+
+        let visible = 0;
+        items.forEach(item => {
+          const match = filter === 'all' || item.dataset.cat === filter;
+          if (match) { item.removeAttribute('hidden'); visible++; }
+          else item.setAttribute('hidden', '');
+        });
+        if (emptyMsg) emptyMsg.classList.toggle('hidden', visible > 0);
+      });
+    });
+  })();
+
+  /* Calculadora — tabela oficial do PDF */
+  const PRICES = {
+    color: {
+      'A5-100':       [3600, 3420, 3240, 2916, 2842.18],
+      'A5-101-200':   [4000, 3800, 3600, 3240, 3157.97],
+      'B5A4-100':     [4200, 3990, 3780, 3402, 3315.87],
+      'B5A4-101-200': [5250, 4987.5, 4725, 4252.5, 4144.84],
+      'B5A4-200-400': [7500, 7125, 6750, 6075, 5921.20],
+      'B5A4-400+':    null
+    },
+    bw: {
+      'A5-100':       [3000, 2850, 2707.5, 2599.2, 2499.23],
+      'A5-101-200':   [3700, 3515, 3339.25, 3205.68, 3082.38],
+      'B5A4-100':     [3900, 3705, 3519.75, 3378.96, 3249],
+      'B5A4-101-200': [5000, 4750, 4512.5, 4332, 4165.38],
+      'B5A4-200-400': [6000, 5700, 5415, 5198.4, 4998.46],
+      'B5A4-400+':    null
+    }
+  };
+  const TIERS = [
+    'Preço unitário — menos de 100 exemplares',
+    'Tarifa a partir de 100 exemplares',
+    'Tarifa a partir de 200 exemplares',
+    'Tarifa a partir de 600 exemplares',
+    'Tarifa a partir de 1 000 exemplares'
+  ];
+
+  const calc = {
+    format: $('#calc-format'), pages: $('#calc-pages'),
+    color: () => $('input[name="calc-color"]:checked').value,
+    orelhas: () => $('input[name="calc-orelhas"]:checked').value,
+    qty: $('#calc-qty'), paper: $('#calc-paper'), grammage: $('#calc-grammage'),
+    cover: $('#calc-cover'), binding: $('#calc-binding'), finish: $('#calc-finish'),
+    unit: $('#calc-unit'), qtyOut: $('#calc-qty-out'),
+    total: $('#calc-total'), tier: $('#calc-tier'),
+    normal: $('#calc-normal'), quote: $('#calc-quote'), quoteReason: $('#calc-quote-reason'),
+    wa: $('#calc-wa'), waQuote: $('#calc-wa-quote')
+  };
+
+  const tierFromQty = q => q < 100 ? 0 : q < 200 ? 1 : q < 600 ? 2 : q < 1000 ? 3 : 4;
+  const baseKey = (format, pages) => {
+    if (format === 'A5') {
+      if (pages === '100') return 'A5-100';
+      if (pages === '101-200') return 'A5-101-200';
+      return null;
+    }
+    return pages === '100' ? 'B5A4-100' : pages === '101-200' ? 'B5A4-101-200' : pages === '200-400' ? 'B5A4-200-400' : 'B5A4-400+';
+  };
+
+  function buildMessage(d, price) {
+    let m = 'Olá Genesis Reprografia! Gostaria de solicitar um orçamento.\n\n';
+    m += `• Formato: ${d.format}\n• Páginas: ${d.pages}\n• Impressão: ${d.color}\n• Exemplares: ${d.qty}\n`;
+    m += `• Orelhas: ${d.orelhas}\n`;
+    m += `• Papel: ${d.paper}\n• Gramagem: ${d.grammage}\n• Capa: ${d.cover}\n• Encadernação: ${d.binding}\n• Acabamento: ${d.finish}\n`;
+    if (price) m += `\nEstimativa:\n• Preço unitário: ${fmtKz(price.unit)}\n• Total: ${fmtKz(price.total)}\n`;
+    else m += `\nConfiguração fora da tabela — solicito validação comercial.\n`;
+    m += `\nAguardo resposta. Obrigado!`;
+    return m;
+  }
+
+  function updateCalc() {
+    if (!calc.format) return;
+    const format = calc.format.value, pages = calc.pages.value, color = calc.color();
+    const qtyRaw = parseInt(calc.qty.value, 10);
+    const qty = isNaN(qtyRaw) || qtyRaw < 1 ? 1 : qtyRaw;
+    const paper = calc.paper.value, grammage = calc.grammage.value;
+    const cover = calc.cover.value, binding = calc.binding.value, finish = calc.finish.value;
+    const orelhasVal = calc.orelhas();
+
+    const data = {
+      format: format === 'A5' ? 'A5' : 'B5 / A4',
+      pages: { '100': 'Até 100', '101-200': '101 a 200', '200-400': '200 a 400', '400+': 'Mais de 400' }[pages] || pages,
+      color: color === 'color' ? 'A cores' : 'Preto & Branco',
+      qty,
+      orelhas: orelhasVal === 'com' ? 'Com orelhas (a confirmar comercialmente)' : 'Sem orelhas',
+      paper: ({ padrao: 'Padrão', couche: 'Couché', reciclado: 'Reciclado', especial: 'Papel especial' })[paper],
+      grammage: grammage === 'padrao' ? 'Padrão' : `${grammage} g/m²`,
+      cover: ({ padrao: 'Capa mole', dura: 'Capa dura' })[cover],
+      binding: ({ padrao: 'Cola quente', argolas: 'Argolas', agrafada: 'Agrafada', costurada: 'Costurada' })[binding],
+      finish: ({ padrao: 'Nenhum', plastificacao: 'Plastificação', vinco: 'Vinco', corte: 'Corte especial' })[finish]
+    };
+
+    const specialBase = paper !== 'padrao' || grammage !== 'padrao' || binding !== 'padrao' || finish !== 'padrao';
+    const specialCover = cover === 'dura';
+    const specialOrelhas = orelhasVal === 'com';
+    const key = baseKey(format, pages);
+    const row = key ? PRICES[color][key] : null;
+
+    if (specialBase || specialCover || specialOrelhas || !row) {
+      calc.normal.classList.add('hidden');
+      calc.quote.classList.remove('hidden');
+      calc.tier.textContent = 'Configuração sob consulta';
+      calc.quoteReason.textContent = specialOrelhas
+        ? 'A opção "com orelhas" requer confirmação comercial (não está na tabela oficial). Envie os dados para receber uma proposta personalizada.'
+        : (specialBase || specialCover)
+          ? 'Papel, gramagem, capa dura, encadernação ou acabamento fora da tabela oficial. Envie os dados para receber uma proposta personalizada.'
+          : 'Combinação de formato e páginas sem preço configurado. Envie os dados para receber uma proposta.';
+      calc.waQuote.href = `https://wa.me/${CONFIG.phone}?text=${encodeURIComponent(buildMessage(data, null))}`;
+      return;
+    }
+
+    const i = tierFromQty(qty);
+    const unitBase = row[i];
+    const total = unitBase * qty;
+
+    calc.normal.classList.remove('hidden');
+    calc.quote.classList.add('hidden');
+    calc.tier.textContent = TIERS[i];
+    calc.unit.textContent = fmtKz(unitBase);
+    calc.qtyOut.textContent = qty.toLocaleString('pt-AO') + ' un.';
+    calc.total.textContent = fmtKz(total);
+    calc.wa.href = `https://wa.me/${CONFIG.phone}?text=${encodeURIComponent(buildMessage(data, { unit: unitBase, total }))}`;
+  }
+
+  if (calc.format) {
+    ['change', 'input'].forEach(evt => {
+      [calc.format, calc.pages, calc.qty, calc.paper, calc.grammage, calc.cover, calc.binding, calc.finish].forEach(el => el.addEventListener(evt, updateCalc));
+      $$('input[name="calc-color"]').forEach(r => r.addEventListener('change', updateCalc));
+      $$('input[name="calc-orelhas"]').forEach(r => r.addEventListener('change', updateCalc));
+    });
+    updateCalc();
+  }
+
+  /* Formulário de contacto */
+  const cfName = $('#cf-name'), cfPhone = $('#cf-phone'), cfService = $('#cf-service'), cfMsg = $('#cf-msg');
+  const cfSend = $('#cf-send'), cfFeedback = $('#cf-feedback');
+
+  if (cfSend) {
+    const buildHref = () => {
+      const body = `Olá Genesis Reprografia! Gostaria de solicitar um orçamento.\n\n` +
+        `• Nome: ${cfName.value.trim() || '—'}\n• Telefone: ${cfPhone.value.trim() || '—'}\n• Serviço: ${cfService.value}\n` +
+        (cfMsg.value.trim() ? `• Mensagem: ${cfMsg.value.trim()}\n` : '') + `\nAguardo resposta. Obrigado!`;
+      return `https://wa.me/${CONFIG.phone}?text=${encodeURIComponent(body)}`;
+    };
+
+    [cfName, cfPhone, cfService, cfMsg].forEach(el => el.addEventListener('input', () => { cfSend.href = buildHref(); }));
+
+    cfSend.addEventListener('click', (e) => {
+      if (!cfName.value.trim() || !cfPhone.value.trim()) {
+        e.preventDefault();
+        cfFeedback.classList.remove('hidden');
+        cfFeedback.textContent = 'Preencha nome e telefone antes de enviar.';
+        cfFeedback.classList.add('text-brand');
+        return;
+      }
+      cfFeedback.classList.remove('hidden');
+      cfFeedback.textContent = 'A abrir o WhatsApp — os dados foram mantidos para reenvio.';
+      cfFeedback.classList.add('text-brand');
+    });
+  }
+
+  /* Reveal */
+  if (document.documentElement.classList.contains('js-reveal') && 'IntersectionObserver' in window) {
+    try {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: 0.1 });
+      $$('.reveal').forEach(el => io.observe(el));
+    } catch (err) {
+      document.documentElement.classList.remove('js-reveal');
+    }
+  }
+
+  const yearEl = $('#year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
